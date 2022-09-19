@@ -1,0 +1,2 @@
+mkfifo inpipe
+mkfifo outpipe
