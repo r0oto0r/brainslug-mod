@@ -10,18 +10,18 @@ Run createPipes.sh or create inpipe and outpipe fifo pipes and change path in no
 
 ## Current Available Custom Commands
 
-| Command     | Payload                                                                                     | Effect |
-|-------------|---------------------------------------------------------------------------------------------|--------|
-| slap        | [SlapPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L207) | Slaps player with username or all players if missing dealing 5 dmg to head body part. Also plays slap.ogg. |
-| comegetsome | [ComeGetSomePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L211) | Lets player with username or all players scream very loud attracting all nearby Zombies. Also plays comegetsome.ogg. | 
-| horde       | [HordePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L215) | Spawns random horde of zombies nearby player with username or all players. |
-| message   | [MessagePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L219) | Sends message to console of player with username or all players. |
-| gift   | [GiftPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L224) | Adds items to inventory of player with username or all players. |
-| storm   | - | Forces ClimateManager to enter storm stages. |
-| sunny   | - | Clears all changes so climate manager and forces it to switch the clearing stage. |
-| climate   | [GiftPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L224) | Manupilate all climate variables. Will get activated in next weather cycle, so can take some ticks to get actualized. |
+| Command     | Payload                                                                                               | Effect |
+|-------------|-------------------------------------------------------------------------------------------------------|--------|
+| slap        | [SlapPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L207)           | Slaps player with username or all players if missing dealing 5 dmg to head body part. Also plays slap.ogg. |
+| comegetsome | [ComeGetSomePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L211)    | Lets player with username or all players scream very loud attracting all nearby Zombies. Also plays comegetsome.ogg. | 
+| horde       | [HordePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L215)          | Spawns random horde of zombies nearby player with username or all players. |
+| message   | [MessagePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L219)        | Sends message to console of player with username or all players. |
+| gift   | [GiftPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L224)           | Adds items to inventory of player with username or all players. |
+| storm   | -                                                                                                     | Forces ClimateManager to enter storm stages. |
+| sunny   | -                                                                                                     | Clears all changes so climate manager and forces it to switch the clearing stage. |
+| climate   | [PZClimate](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L176)             | Manupilate all climate variables. Will get activated in next weather cycle, so can take some ticks to get actualized. |
 | zombieJumpScare   | [ZombieJumpScarePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#229) | Spawns a random zombie with random outfit, gender and walking type nearby player with username or all players. Zombie will also target user and most likley attack right away |
-| info    | -       | Triggers PZ server to fan out info |
+| info    | -                                                                                                     | Triggers PZ server to fan out info |
 
 You can find example requests [here](https://github.com/r0oto0r/brainslug-server#example-command-requests)
 
