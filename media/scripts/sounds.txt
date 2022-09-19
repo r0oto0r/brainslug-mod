@@ -1,0 +1,24 @@
+module BrainSlug {
+
+	    sound comegetsome
+        {
+            category = Player, loop = false, is3D = true,
+            clip
+            {
+                file = media/sound/comegetsome.ogg,
+                distanceMax = 200,
+                volume = 1
+            }
+        }
+
+        sound slap
+        {
+            category = Player, loop = false, is3D = true,
+            clip
+            {
+                file = media/sound/slap.ogg,
+                distanceMax = 9000,
+                volume = 1
+            }
+        }
+}
