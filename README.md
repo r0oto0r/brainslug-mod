@@ -5,8 +5,11 @@ This mod abuses the mod file writer classes in order to write and read from fifo
 This mod is accompanied by a nodejs server which can communicate via inpipe/outpipe as well as providing express and websocket server.
 Find it [here](https://github.com/r0oto0r/brainslug-server).
 
-## Additional Setup
-Run createPipes.sh or create inpipe and outpipe fifo pipes and change path in nodejs server.
+## Setup
+1. Copy all files to ~/Zomboid/mods/BrainSlug on both - client and server. done.
+2. Run createPipes.sh or create inpipe and outpipe fifo pipes and change path in nodejs server.
+3. Start nodejs server first to unblock FileReader in PZ mod (blocking process...).
+4. Access websocket / express server and have fun :)
 
 ## Current Available Custom Commands
 
