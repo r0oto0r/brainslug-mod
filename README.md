@@ -13,6 +13,8 @@ Find it [here](https://github.com/r0oto0r/brainslug-server).
 
 ## Current Available Custom Commands
 
+Just some simple things to show what's possible.
+
 | Command     | Payload                                                                                                | Effect |
 |-------------|--------------------------------------------------------------------------------------------------------|--------|
 | slap        | [SlapPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L207)            | Slaps player with username or all players if missing dealing 5 dmg to head body part. Also plays slap.ogg. |
@@ -21,7 +23,7 @@ Find it [here](https://github.com/r0oto0r/brainslug-server).
 | message   | [MessagePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L219)         | Sends message to console of player with username or all players. |
 | gift   | [GiftPayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L224)            | Adds items to inventory of player with username or all players. |
 | storm   | -                                                                                                      | Forces ClimateManager to enter storm stages. |
-| sunny   | -                                                                                                      | Clears all changes so climate manager and forces it to switch the clearing stage. |
+| sunny   | -                                                                                                      | Clears all changes so climate manager and forces it to switch into clearing stage. |
 | climate   | [PZClimate](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L176)              | Manupilate all climate variables. Will get activated in next weather cycle, so can take some ticks to get actualized. |
 | zombieJumpScare   | [ZombieJumpScarePayload](https://github.com/r0oto0r/brainslug-server/blob/main/src/Interfaces.ts#L229) | Spawns a random zombie with random outfit, gender and walking type nearby player with username or all players. Zombie will also target user and most likley attack right away |
 | info    | -                                                                                                      | Triggers PZ server to fan out info |
@@ -32,3 +34,7 @@ You can find example requests [here](https://github.com/r0oto0r/brainslug-server
 You should also enable RCON in game server config when used with the nodejs server. It will also expose all rcon commands then.
 
 You can find example requests [here](https://github.com/r0oto0r/brainslug-server#example-rcon-requests)
+
+## NOT working:
+* Client connected/disconnected signals (seems like these are emitted on client not on server :face_palm:)
+* Player and SafeHouse inventory functions do not traverse recursivly through inventory containers (i.e. no backback items yet)
