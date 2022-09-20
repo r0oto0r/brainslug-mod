@@ -36,5 +36,5 @@ You should also enable RCON in game server config when used with the nodejs serv
 You can find example requests [here](https://github.com/r0oto0r/brainslug-server#example-rcon-requests)
 
 ## NOT working:
-* Client connected/disconnected signals (seems like these are emitted on client not on server :face_palm:)
+* Client connected/disconnected signals (seems like these are emitted on client not on server :face_palm: )
 * Player and SafeHouse inventory functions do not traverse recursivly through inventory containers (i.e. no backback items yet)
