@@ -430,7 +430,6 @@ local staticInfo = {
 	recipes = getRecipesInfo(),
 	femaleOutfits = getOutfitInfo(true),
 	maleOutfits = getOutfitInfo(false)
-	getItemNameFromFullType()
 }
 
 local sendInfo = function()
@@ -447,14 +446,7 @@ local sendInfo = function()
 end
 
 local sendPong = function()
-	writePipe('pong', {
-		server = staticInfo.server,
-		game = {
-			recipes = staticInfo.recipes,
-			femaleOutfits = staticInfo.femaleOutfits,
-			maleOutfits = staticInfo.maleOutfits
-		}
-	})
+	writePipe('pong', staticInfo)
 end
 
 local execCommand = function(command, payload)
@@ -496,6 +488,17 @@ local execCommand = function(command, payload)
 				local y = player:getY()
 				createHordeInAreaTo(x, y, 100, 100, x, y, 100)
 				print('Spawning horde for', player:getUsername(), x, y)
+			end
+		end
+	end
+
+	if command == 'teleport' then
+		local players = getOnlinePlayers()
+		for i = 0, players:size() -1 do
+			local player = players:get(i)
+			if player ~= nil and (payload.username == nil or player:getUsername() == payload.username) then
+				print('Teleporting user', player:getUsername())
+				sendServerCommand(player,'BrainSlug', command, payload)
 			end
 		end
 	end

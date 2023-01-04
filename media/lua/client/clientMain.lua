@@ -46,12 +46,16 @@ local onServerCommand = function(module, command, args)
     if command == 'gift' then
         local player = getPlayer()
         if player ~= nil and (player:getUsername() == args.username or args.username == nil) then
-            print(player:getUsername())
-            local inv = player:getInventory();
+            local inv = player:getInventory()
             for _, item in ipairs(args.items) do
                 inv:AddItem(item);
             end
         end
+    end
+
+    if command == 'teleport' then
+        local player = getPlayer()
+        player:setPosition(args.x, args.y, player:getZ())
     end
 end
 
